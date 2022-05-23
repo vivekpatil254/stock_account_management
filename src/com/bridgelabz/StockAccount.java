@@ -7,13 +7,16 @@ public class StockAccount {
     int numberOfShares, sharePrice, totalValue;
 
     public static void main(String[] args) {
-        StockAccount[] object = new StockAccount[10];
+        StockAccount object1=new StockAccount();
+       List <StockAccount> object = new ArrayList<StockAccount>();
         int i;
-        for (i = 0; i < 5; i++)
-            object[i].getData();
         for (i = 0; i < 5; i++) {
-            object[i].calculate();
-            object[i].display();
+            object1.getData();
+            object.add(object1);
+        }
+        for (i = 0; i < 5; i++) {
+            object.get(i).calculate();
+            object.get(i).display();
         }
     }
 
