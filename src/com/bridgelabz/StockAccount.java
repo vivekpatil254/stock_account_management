@@ -18,6 +18,7 @@ public class StockAccount {
             object.get(i).calculate();
             object.get(i).display();
         }
+
     }
 
     public void getData() {
@@ -42,5 +43,20 @@ public class StockAccount {
         System.out.println("Number of shares    :   " + numberOfShares);
         System.out.println(" Share Price        :   " + sharePrice);
         System.out.println(" Total value        :   " + totalValue);
+    }
+    public void debit()
+    {
+        int debitAmmount;
+        System.out.println("Enterr ammount to be debited from account : ");
+        Scanner scanner = new Scanner(System.in);
+        debitAmmount = scanner.nextInt();
+        if(totalValue<debitAmmount)
+        {
+            System.out.println("the debit ammount not possible becouse it  is more than avaialable total value");
+        }
+        else
+        { totalValue=totalValue-debitAmmount;
+        System.out.println("Total avaialable ammount iin account is : "+totalValue);
+        }
     }
 }
